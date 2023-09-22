@@ -1,14 +1,25 @@
 apiVersion: v1
 entries:
+  mongo-migrant:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-09-22T19:08:22.457215+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 00a88ce2994e159639e6aed14aa6ca6265cc18231399febd93ba4be8ce62974c
+    name: mongo-migrant
+    type: application
+    urls:
+    - https://jatin-jangir.github.io/migrant/mongo-migrant-0.0.1.tgz
+    version: 0.0.1
   postgres-migrant:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-09-21T19:26:22.939965+05:30"
+    created: "2023-09-22T19:08:22.457589+05:30"
     description: A Helm chart for Kubernetes
-    digest: 4bc613eaa00d30224d55e3689efa26ab5088a65752244c45537ebe1f230d7352
+    digest: de4aaa5c5adf649983c5e1d1c790c513a6a087dd004cf6cd29ecb20391f14d3e
     name: postgres-migrant
     type: application
     urls:
-    - postgres-migrant-0.0.1.tgz
+    - https://jatin-jangir.github.io/migrant/postgres-migrant-0.0.1.tgz
     version: 0.0.1
-generated: "2023-09-21T19:26:22.93998+05:30"
+generated: "2023-09-22T19:08:22.455972+05:30"
