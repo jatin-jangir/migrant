@@ -96,15 +96,16 @@
                 "title": "A Schema",
                 "required": [
                     "location",
-                    "git_token",
-                    "git_user",
-                    "git_repo",
+                    "repo_url",
+                    "repo_name",
+                    "commit",
                     "db_name",
                     "version"
                 ],
                 "properties": {
                     "enable": {
                         "type": "boolean",
+                        "default": "true",
                         "title": "enable",
                         "examples": [
                             "true"
@@ -112,6 +113,7 @@
                     },
                     "location": {
                         "type": "string",
+                        "default": "sql/",
                         "title": "The location Schema",
                         "examples": [
                             "scripts/sql/"
@@ -133,6 +135,7 @@
                     },
                     "branch": {
                         "type": "string",
+                        "default": "amin",
                         "title": "The branch ",
                         "examples": [
                             "main",
@@ -156,13 +159,15 @@
                     },
                     "query": {
                         "type": "string",
+                        "default": "",
                         "title": "The query that pased after ? in rest API ",
                         "examples": [
-                            "sslmode=disable"
+                            "authSource=admin"
                         ]
                     },
                     "version": {
                         "type": "string",
+                        "default": "0",
                         "title": "The version Schema",
                         "examples": [
                             "0"
