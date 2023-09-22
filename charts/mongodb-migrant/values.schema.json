@@ -117,26 +117,26 @@
                             "scripts/sql/"
                         ]
                     },
-                    "repo_url": {
+                    "git_token": {
                         "type": "string",
-                        "title": "The repo_url for running git clone",
+                        "title": "The git_token Schema",
                         "examples": [
-                            "https://<user>:<token>@github.com/<user>/<repo>.git"
+                            "xxxxxx"
                         ]
                     },
-                    "repo_name": {
+                    "git_user": {
                         "type": "string",
-                        "title": "The repo_name ",
+                        "title": "The git_user Schema",
                         "examples": [
                             "yyy"
                         ]
                     },
-                    "branch": {
+                    "git_repo": {
                         "type": "string",
-                        "title": "The branch ",
+                        "title": "The git_repo Schema",
                         "examples": [
-                            "main",
-                            "migration-test"
+                            "devtron-labs/devtron",
+                            "devtron-labs/git-sensor"
                         ]
                     },
                     "db_name": {
@@ -145,13 +145,6 @@
                         "examples": [
                             "orchestrator",
                             "git_sensor"
-                        ]
-                    },
-                    "commit": {
-                        "type": "string",
-                        "title": "The commit ",
-                        "examples": [
-                            "122sddffff222ddd"
                         ]
                     },
                     "version": {
@@ -165,11 +158,18 @@
                 "examples": [
                     {
                         "location": "scripts/sql/",
-                        "repo_url": "https://<user>:<token>@github.com/<user>/<repo>.git",
-                        "repo_name": "yyy",
-                        "branch": "main",
-                        "commit": "2692583b259a17bc3b479b3845c2a85582274157",
+                        "git_token": "xxxxxx",
+                        "git_user": "yyy",
+                        "git_repo": "devtron-labs/devtron",
                         "db_name": "orchestrator",
+                        "version": "0"
+                    },
+                    {
+                        "location": "scripts/sql/",
+                        "git_token": "xxxxxx",
+                        "git_user": "yyy",
+                        "git_repo": "devtron-labs/git-sensor",
+                        "db_name": "git_sensor",
                         "version": "0"
                     }
                 ]
@@ -178,11 +178,18 @@
                 [
                     {
                         "location": "scripts/sql/",
-                        "repo_url": "https://<user>:<token>@github.com/<user>/<repo>.git",
-                        "repo_name": "yyy",
-                        "branch": "main",
-                        "commit": "2692583b259a17bc3b479b3845c2a85582274157",
+                        "git_token": "xxxxxx",
+                        "git_user": "yyy",
+                        "git_repo": "devtron-labs/devtron",
                         "db_name": "orchestrator",
+                        "version": "0"
+                    },
+                    {
+                        "location": "scripts/sql/",
+                        "git_token": "xxxxxx",
+                        "git_user": "yyy",
+                        "git_repo": "devtron-labs/git-sensor",
+                        "db_name": "git_sensor",
                         "version": "0"
                     }
                 ]
@@ -202,11 +209,18 @@
             "migrations": [
                 {
                     "location": "scripts/sql/",
-                    "repo_url": "https://<user>:<token>@github.com/<user>/<repo>.git",
-                    "repo_name": "yyy",
-                    "branch": "main",
-                    "commit": "2692583b259a17bc3b479b3845c2a85582274157",
+                    "git_token": "xxxxxx",
+                    "git_user": "yyy",
+                    "git_repo": "devtron-labs/devtron",
                     "db_name": "orchestrator",
+                    "version": "0"
+                },
+                {
+                    "location": "scripts/sql/",
+                    "git_token": "xxxxxx",
+                    "git_user": "yyy",
+                    "git_repo": "devtron-labs/git-sensor",
+                    "db_name": "git_sensor",
                     "version": "0"
                 }
             ]
