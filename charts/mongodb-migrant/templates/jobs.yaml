@@ -37,9 +37,9 @@ spec:
               echo "Migrating to version (0 for latest)"
               echo $(MIGRATE_TO_VERSION);
               if [ $(MIGRATE_TO_VERSION) -eq "0" ]; then
-                migrate -path $(SCRIPT_DIR) -database mongodb://$(DB_USER_NAME):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)/$(DB_NAME)?query up;
+                migrate -path $(SCRIPT_DIR) -database mongodb://$(DB_USER_NAME):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)/$(DB_NAME)?$(QUERY) up;
               else
-                migrate -path $(SCRIPT_DIR) -database mongodb://$(DB_USER_NAME):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)/$(DB_NAME)?query goto $(MIGRATE_TO_VERSION);  
+                migrate -path $(SCRIPT_DIR) -database mongodb://$(DB_USER_NAME):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)/$(DB_NAME)?$(QUERY) goto $(MIGRATE_TO_VERSION);  
               fi
         env:
           - name: REPO_URL
@@ -56,6 +56,8 @@ spec:
             value: {{ .version | quote }}
           - name: DB_NAME
             value: {{ .db_name }}
+          - name: QUERY
+            value: {{ .query }}
         envFrom:
           - secretRef:
               name: test-secret

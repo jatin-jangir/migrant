@@ -154,6 +154,13 @@
                             "122sddffff222ddd"
                         ]
                     },
+                    "query": {
+                        "type": "string",
+                        "title": "The query that pased after ? in rest API ",
+                        "examples": [
+                            "sslmode=disable"
+                        ]
+                    },
                     "version": {
                         "type": "string",
                         "title": "The version Schema",
@@ -170,6 +177,7 @@
                         "branch": "main",
                         "commit": "2692583b259a17bc3b479b3845c2a85582274157",
                         "db_name": "orchestrator",
+                        "query": "sslmode=disable",
                         "version": "0"
                     }
                 ]
@@ -183,6 +191,7 @@
                         "branch": "main",
                         "commit": "2692583b259a17bc3b479b3845c2a85582274157",
                         "db_name": "orchestrator",
+                        "query": "sslmode=disable",
                         "version": "0"
                     }
                 ]
@@ -207,6 +216,7 @@
                     "branch": "main",
                     "commit": "2692583b259a17bc3b479b3845c2a85582274157",
                     "db_name": "orchestrator",
+                    "query": "sslmode=disable",
                     "version": "0"
                 }
             ]

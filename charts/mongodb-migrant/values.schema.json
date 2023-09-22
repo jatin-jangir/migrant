@@ -32,11 +32,11 @@
             "properties": {
                 "db_type": {
                     "type": "string",
-                    "default": "postgress",
+                    "default": "mongodb",
                     "description": "database type",
                     "title": "database type",
                     "examples": [
-                        "postgress",
+                        "mongodb",
                         "sql"
                     ]
                 },
@@ -45,26 +45,26 @@
                     "default": "",
                     "title": "The db_user Schema",
                     "examples": [
-                        "postgres"
+                        "mongodb"
                     ]
                 },
                 "db_host": {
                     "type": "string",
-                    "default": "postgresql-postgresql.default",
+                    "default": "mongodb-mongodb.default",
                     "description": "database host url",
                     "title": "database host",
                     "examples": [
-                        "postgresql-postgresql.demo-test",
+                        "mongodb-mongodb.demo-test",
                         "postgresql-service.qa-database"
                     ]
                 },
                 "db_port": {
                     "type": "string",
-                    "default": "5432",
+                    "default": "27017",
                     "description": "database port number",
                     "title": "database port",
                     "examples": [
-                        "5432"
+                        "27017"
                     ]
                 },
                 "db_password": {
@@ -117,26 +117,26 @@
                             "scripts/sql/"
                         ]
                     },
-                    "git_token": {
+                    "repo_url": {
                         "type": "string",
-                        "title": "The git_token Schema",
+                        "title": "The repo_url for running git clone",
                         "examples": [
-                            "xxxxxx"
+                            "https://<user>:<token>@github.com/<user>/<repo>.git"
                         ]
                     },
-                    "git_user": {
+                    "repo_name": {
                         "type": "string",
-                        "title": "The git_user Schema",
+                        "title": "The repo_name ",
                         "examples": [
                             "yyy"
                         ]
                     },
-                    "git_repo": {
+                    "branch": {
                         "type": "string",
-                        "title": "The git_repo Schema",
+                        "title": "The branch ",
                         "examples": [
-                            "devtron-labs/devtron",
-                            "devtron-labs/git-sensor"
+                            "main",
+                            "migration-test"
                         ]
                     },
                     "db_name": {
@@ -145,6 +145,20 @@
                         "examples": [
                             "orchestrator",
                             "git_sensor"
+                        ]
+                    },
+                    "commit": {
+                        "type": "string",
+                        "title": "The commit ",
+                        "examples": [
+                            "122sddffff222ddd"
+                        ]
+                    },
+                    "query": {
+                        "type": "string",
+                        "title": "The query that pased after ? in rest API ",
+                        "examples": [
+                            "authSource=admin"
                         ]
                     },
                     "version": {
@@ -158,18 +172,12 @@
                 "examples": [
                     {
                         "location": "scripts/sql/",
-                        "git_token": "xxxxxx",
-                        "git_user": "yyy",
-                        "git_repo": "devtron-labs/devtron",
+                        "repo_url": "https://<user>:<token>@github.com/<user>/<repo>.git",
+                        "repo_name": "yyy",
+                        "branch": "main",
+                        "commit": "2692583b259a17bc3b479b3845c2a85582274157",
                         "db_name": "orchestrator",
-                        "version": "0"
-                    },
-                    {
-                        "location": "scripts/sql/",
-                        "git_token": "xxxxxx",
-                        "git_user": "yyy",
-                        "git_repo": "devtron-labs/git-sensor",
-                        "db_name": "git_sensor",
+                        "query": "authSource=admin",
                         "version": "0"
                     }
                 ]
@@ -178,18 +186,12 @@
                 [
                     {
                         "location": "scripts/sql/",
-                        "git_token": "xxxxxx",
-                        "git_user": "yyy",
-                        "git_repo": "devtron-labs/devtron",
+                        "repo_url": "https://<user>:<token>@github.com/<user>/<repo>.git",
+                        "repo_name": "yyy",
+                        "branch": "main",
+                        "commit": "2692583b259a17bc3b479b3845c2a85582274157",
                         "db_name": "orchestrator",
-                        "version": "0"
-                    },
-                    {
-                        "location": "scripts/sql/",
-                        "git_token": "xxxxxx",
-                        "git_user": "yyy",
-                        "git_repo": "devtron-labs/git-sensor",
-                        "db_name": "git_sensor",
+                        "query": "authSource=admin",
                         "version": "0"
                     }
                 ]
@@ -200,8 +202,8 @@
         {
             "image": "migrate/migrate",
             "database_credentials": {
-                "db_type": "postgres",
-                "db_host": "postgresql-postgresql.devtroncd",
+                "db_type": "mongo",
+                "db_host": "mongo-mongo.devtroncd",
                 "db_port": 5432,
                 "db_user": "postgres",
                 "db_password": "xxxxxx"
@@ -209,18 +211,12 @@
             "migrations": [
                 {
                     "location": "scripts/sql/",
-                    "git_token": "xxxxxx",
-                    "git_user": "yyy",
-                    "git_repo": "devtron-labs/devtron",
+                    "repo_url": "https://<user>:<token>@github.com/<user>/<repo>.git",
+                    "repo_name": "yyy",
+                    "branch": "main",
+                    "commit": "2692583b259a17bc3b479b3845c2a85582274157",
                     "db_name": "orchestrator",
-                    "version": "0"
-                },
-                {
-                    "location": "scripts/sql/",
-                    "git_token": "xxxxxx",
-                    "git_user": "yyy",
-                    "git_repo": "devtron-labs/git-sensor",
-                    "db_name": "git_sensor",
+                    "query": "authSource=admin",
                     "version": "0"
                 }
             ]

@@ -13,4 +13,5 @@ migrations:
     branch: "main"
     commit: "2692583b259a17bc3b479b3845c2a85582274157"
     location: scripts/psql/
+    query: "authSource=admin"
     version: "0"
