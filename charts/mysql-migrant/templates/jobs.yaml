@@ -1,0 +1,68 @@
+{{- range .Values.migrations }}
+{{- if eq .enable true }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test-{{ .db_name }}-migration
+  annotations: {}
+  labels:
+    job: test-{{ .db_name }}-migration
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: migrator-container
+        image: {{ $.Values.image }}
+        command: ["/bin/sh", "-c"]
+        args:
+            - |
+              #!/bin/sh
+              apk add git
+              echo "git cloning"
+              git clone $REPO_URL
+              cd $(REPO_NAME)
+              # Check out the specific branch
+              git checkout $BRANCH_NAME
+
+              # Check out the specific commit hash
+              git checkout $COMMIT_HASH
+
+              # Verify that you are on the correct branch and commit
+              CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+              CURRENT_COMMIT=$(git rev-parse HEAD)
+
+              echo "Current branch: $CURRENT_BRANCH"
+              echo "Current commit: $CURRENT_COMMIT"
+              echo "Migrating to version (0 for latest)"
+              echo $(MIGRATE_TO_VERSION);
+              if [ $(MIGRATE_TO_VERSION) -eq "0" ]; then
+                migrate -path $(SCRIPT_DIR) -database mysql://$(DB_USER_NAME):$(DB_PASSWORD)@tcp($(DB_HOST):$(DB_PORT))/$(DB_NAME)?$(QUERY) up;
+              else
+                migrate -path $(SCRIPT_DIR) -database mysql://$(DB_USER_NAME):$(DB_PASSWORD)@tcp($(DB_HOST):$(DB_PORT))/$(DB_NAME)?$(QUERY) goto $(MIGRATE_TO_VERSION);  
+              fi
+        env:
+          - name: REPO_URL
+            value: {{ .repo_url }}
+          - name: BRANCH_NAME
+            value: {{ .branch }}
+          - name: COMMIT_HASH
+            value: {{ .commit }}
+          - name: REPO_NAME
+            value: {{ .repo_name }}
+          - name: SCRIPT_DIR
+            value: {{ .location }}
+          - name: MIGRATE_TO_VERSION
+            value: {{ .version | quote }}
+          - name: DB_NAME
+            value: {{ .db_name }}
+          - name: QUERY
+            value: {{ .query }}
+        envFrom:
+          - secretRef:
+              name: test-secret
+          - configMapRef:
+                name: test-configmap
+---
+{{-  end }}
+{{-  end }}
