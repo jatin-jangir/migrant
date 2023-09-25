@@ -1,9 +1,9 @@
 database_credentials:
-  db_host: postgresql-postgresql.devtroncd
+  db_host: mysql-mysql.devtroncd
   db_password: toKJPt4xjAFAHROMywyJ1Js7vp8Mnzaz
-  db_port: "5432"
-  db_type: postgres
-  db_user: postgres
+  db_port: "3306"
+  db_type: mysql
+  db_user: mysql
 image: migrate/migrate
 migrations:
   - db_name: test
@@ -12,6 +12,6 @@ migrations:
     repo_name: "<repo>"
     branch: "main"
     commit: "2692583b259a17bc3b479b3845c2a85582274157"
-    location: scripts/psql/
-    query: "sslmode=disable"
+    location: scripts/mysql/
+    query: "x-tls-insecure-skip-verify=true,multiStatements=true"
     version: "0"

@@ -3,10 +3,10 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: test-{{ .db_name }}-migration
+  name: {{ $.Release.Name  }}-{{ .db_name | replace "_" "-" }}-migration
   annotations: {}
   labels:
-    job: test-{{ .db_name }}-migration
+    job: {{ $.Release.Name }}-migration
 spec:
   template:
     spec:

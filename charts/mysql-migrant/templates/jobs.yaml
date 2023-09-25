@@ -3,10 +3,10 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: test-{{ .db_name }}-migration
+  name: {{ $.Release.Name  }}-{{ .db_name | replace "_" "-" }}-migration
   annotations: {}
   labels:
-    job: test-{{ .db_name }}-migration
+    job: {{ $.Release.Name }}-migration
 spec:
   template:
     spec:
@@ -21,7 +21,7 @@ spec:
               apk add git
               echo "git cloning"
               git clone $REPO_URL
-              cd $(REPO_NAME)
+              cd $REPO_NAME
               # Check out the specific branch
               git checkout $BRANCH_NAME
 
@@ -34,12 +34,17 @@ spec:
 
               echo "Current branch: $CURRENT_BRANCH"
               echo "Current commit: $CURRENT_COMMIT"
+              DB="tcp($DB_HOST:$DB_PORT)"
+              echo $DB
               echo "Migrating to version (0 for latest)"
-              echo $(MIGRATE_TO_VERSION);
-              if [ $(MIGRATE_TO_VERSION) -eq "0" ]; then
-                migrate -path $(SCRIPT_DIR) -database mysql://$(DB_USER_NAME):$(DB_PASSWORD)@tcp($(DB_HOST):$(DB_PORT))/$(DB_NAME)?$(QUERY) up;
+              echo $MIGRATE_TO_VERSION
+              if [ $MIGRATE_TO_VERSION -eq "0" ]
+              then
+                echo "up"
+                migrate -path $SCRIPT_DIR -database mysql://$DB_USER_NAME:$DB_PASSWORD@$DB/$DB_NAME?$QUERY up;
               else
-                migrate -path $(SCRIPT_DIR) -database mysql://$(DB_USER_NAME):$(DB_PASSWORD)@tcp($(DB_HOST):$(DB_PORT))/$(DB_NAME)?$(QUERY) goto $(MIGRATE_TO_VERSION);  
+                echo "goto"
+                migrate -path $SCRIPT_DIR -database mysql://$DB_USER_NAME:$DB_PASSWORD@$DB_HOST:$DB?$QUERY goto $MIGRATE_TO_VERSION;
               fi
         env:
           - name: REPO_URL
