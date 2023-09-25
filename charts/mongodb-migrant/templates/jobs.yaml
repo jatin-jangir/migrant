@@ -60,9 +60,9 @@ spec:
             value: {{ .query }}
         envFrom:
           - secretRef:
-              name: test-secret
+              name: {{ $.Release.Name  }}-secret
           - configMapRef:
-                name: test-configmap
+                name: {{ $.Release.Name  }}-configmap
 ---
 {{-  end }}
 {{-  end }}
