@@ -3,7 +3,17 @@ entries:
   mongo-migrant:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-09-25T12:29:28.166737+05:30"
+    created: "2023-09-25T18:49:58.519674+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 06de88cfdd17e471f509cc46395e5688ffb14841a6d3ee9ff0787868cbe5ae0b
+    name: mongo-migrant
+    type: application
+    urls:
+    - https://jatin-jangir.github.io/migrant/mongo-migrant-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-09-25T18:49:58.519285+05:30"
     description: A Helm chart for Kubernetes
     digest: 713d5701e300e8ef77d7a85e4ed0119d6f1aa477c2f5545562cc6814c468dad1
     name: mongo-migrant
@@ -13,7 +23,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-09-25T12:29:28.166338+05:30"
+    created: "2023-09-25T18:49:58.518832+05:30"
     description: A Helm chart for Kubernetes
     digest: 00a88ce2994e159639e6aed14aa6ca6265cc18231399febd93ba4be8ce62974c
     name: mongo-migrant
@@ -24,7 +34,17 @@ entries:
   mysql-migrant:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-09-25T12:29:28.167146+05:30"
+    created: "2023-09-25T18:49:58.520446+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 8d16670ec97a20731aca859a1c9d2f59a4aef27fbace56f639d35cae5321b2a9
+    name: mysql-migrant
+    type: application
+    urls:
+    - https://jatin-jangir.github.io/migrant/mysql-migrant-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-09-25T18:49:58.520068+05:30"
     description: A Helm chart for Kubernetes
     digest: da918671f02e797178c21ab8434c21e8cb34c8c7cf4a840092cd40058dfcaabf
     name: mysql-migrant
@@ -35,7 +55,17 @@ entries:
   postgres-migrant:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-09-25T12:29:28.167987+05:30"
+    created: "2023-09-25T18:49:58.522918+05:30"
+    description: A Helm chart for Kubernetes
+    digest: bc6d76fe32efc3845be9842f02de81304461d4d0469e400d1163441467bb2ffb
+    name: postgres-migrant
+    type: application
+    urls:
+    - https://jatin-jangir.github.io/migrant/postgres-migrant-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-09-25T18:49:58.522559+05:30"
     description: A Helm chart for Kubernetes
     digest: a27afc30707368670b0d9541527a0036cc2d5a67d095e20d7605b8fa367e4927
     name: postgres-migrant
@@ -45,7 +75,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-09-25T12:29:28.167579+05:30"
+    created: "2023-09-25T18:49:58.522152+05:30"
     description: A Helm chart for Kubernetes
     digest: de4aaa5c5adf649983c5e1d1c790c513a6a087dd004cf6cd29ecb20391f14d3e
     name: postgres-migrant
@@ -53,4 +83,15 @@ entries:
     urls:
     - https://jatin-jangir.github.io/migrant/postgres-migrant-0.0.1.tgz
     version: 0.0.1
-generated: "2023-09-25T12:29:28.165225+05:30"
+  sql-server-migrant:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-09-25T18:49:58.523256+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 77b0e81fc900e8bebe550dc8a95b48d8f0c1fc10deb9e3505f97ecac76d091a7
+    name: sql-server-migrant
+    type: application
+    urls:
+    - https://jatin-jangir.github.io/migrant/sql-server-migrant-0.0.2.tgz
+    version: 0.0.2
+generated: "2023-09-25T18:49:58.517801+05:30"

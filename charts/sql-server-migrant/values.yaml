@@ -1,0 +1,17 @@
+database_credentials:
+  db_host: "mssql-latest-deploy.default"
+  db_password: "Toughpass1!"
+  db_port: "1433"
+  db_type: "sqlserver"
+  db_user: "sa"
+image: migrate/migrate
+migrations:
+  - instance_name: test
+    enable: true
+    repo_url: "https://<user>:<token>@github.com/<user>/<repo>.git"
+    repo_name: "<repo>"
+    branch: "main"
+    commit: "2692583b259a17bc3b479b3845c2a85582274157"
+    location: scripts/psql/
+    query: "sslmode=disable"
+    version: "0"

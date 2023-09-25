@@ -36,10 +36,18 @@ spec:
               echo "Current commit: $CURRENT_COMMIT"
               echo "Migrating to version (0 for latest)"
               echo $(MIGRATE_TO_VERSION);
-              if [ $(MIGRATE_TO_VERSION) -eq "0" ]; then
-                migrate -path $(SCRIPT_DIR) -database postgres://$(DB_USER_NAME):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)/$(DB_NAME)?$(QUERY) up;
+              if [ $(INSTNACE_NAME) -eq "" ]; then
+                if [ $(MIGRATE_TO_VERSION) -eq "0" ]; then
+                  migrate -path $(SCRIPT_DIR) -database sqlserver://$(DB_USER_NAME):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)/$(INSTNACE_NAME)?$(QUERY) up;
+                else
+                  migrate -path $(SCRIPT_DIR) -database sqlserver://$(DB_USER_NAME):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)/$(INSTNACE_NAME)?$(QUERY) goto $(MIGRATE_TO_VERSION);  
+                fi
               else
-                migrate -path $(SCRIPT_DIR) -database postgres://$(DB_USER_NAME):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)/$(DB_NAME)?$(QUERY) goto $(MIGRATE_TO_VERSION);  
+                if [ $(MIGRATE_TO_VERSION) -eq "0" ]; then
+                  migrate -path $(SCRIPT_DIR) -database sqlserver://$(DB_USER_NAME):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)?$(QUERY) up;
+                else
+                  migrate -path $(SCRIPT_DIR) -database sqlserver://$(DB_USER_NAME):$(DB_PASSWORD)@$(DB_HOST):$(DB_PORT)?$(QUERY) goto $(MIGRATE_TO_VERSION);  
+                fi
               fi
         env:
           - name: REPO_URL
@@ -52,10 +60,12 @@ spec:
             value: {{ .repo_name }}
           - name: SCRIPT_DIR
             value: {{ .location }}
-          - name: MIGRATE_TO_VERSION
-            value: {{ .version | quote }}
           - name: DB_NAME
             value: {{ .db_name }}
+          - name: MIGRATE_TO_VERSION
+            value: {{ .version | quote }}
+          - name: INSTNACE_NAME
+            value: {{ .instance_name }}
           - name: QUERY
             value: {{ .query }}
         envFrom:
