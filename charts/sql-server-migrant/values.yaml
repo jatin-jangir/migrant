@@ -1,9 +1,9 @@
 database_credentials:
-  db_host: postgresql-postgresql.devtroncd
-  db_password: toKJPt4xjAFAHROMywyJ1Js7vp8Mnzaz
-  db_port: "5432"
-  db_type: postgres
-  db_user: postgres
+  db_host: "mssql-latest-deploy.default"
+  db_password: "Toughpass1!"
+  db_port: "1433"
+  db_type: "sqlserver"
+  db_user: "sa"
 image: migrate/migrate
 migrations:
   - instance_name: test
