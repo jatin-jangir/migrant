@@ -9,7 +9,7 @@ entries:
     name: mongo-migrant
     type: application
     urls:
-    - https://jatin-jangir.github.io/migrant/mongo-migrant-0.0.3.tgz
+    - https://jatin-jangir.github.io/migrant/helm-package/mongo-migrant-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
     appVersion: 1.16.0
@@ -19,7 +19,7 @@ entries:
     name: mongo-migrant
     type: application
     urls:
-    - https://jatin-jangir.github.io/migrant/mongo-migrant-0.0.2.tgz
+    - https://jatin-jangir.github.io/migrant/helm-package/mongo-migrant-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v2
     appVersion: 1.16.0
@@ -29,7 +29,7 @@ entries:
     name: mongo-migrant
     type: application
     urls:
-    - https://jatin-jangir.github.io/migrant/mongo-migrant-0.0.1.tgz
+    - https://jatin-jangir.github.io/migrant/helm-package/mongo-migrant-0.0.1.tgz
     version: 0.0.1
   mysql-migrant:
   - apiVersion: v2
@@ -40,7 +40,7 @@ entries:
     name: mysql-migrant
     type: application
     urls:
-    - https://jatin-jangir.github.io/migrant/mysql-migrant-0.0.3.tgz
+    - https://jatin-jangir.github.io/migrant/helm-package/mysql-migrant-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
     appVersion: 1.16.0
@@ -50,7 +50,7 @@ entries:
     name: mysql-migrant
     type: application
     urls:
-    - https://jatin-jangir.github.io/migrant/mysql-migrant-0.0.2.tgz
+    - https://jatin-jangir.github.io/migrant/helm-package/mysql-migrant-0.0.2.tgz
     version: 0.0.2
   postgres-migrant:
   - apiVersion: v2
@@ -61,7 +61,7 @@ entries:
     name: postgres-migrant
     type: application
     urls:
-    - https://jatin-jangir.github.io/migrant/postgres-migrant-0.0.3.tgz
+    - https://jatin-jangir.github.io/migrant/helm-package/postgres-migrant-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
     appVersion: 1.16.0
@@ -71,7 +71,7 @@ entries:
     name: postgres-migrant
     type: application
     urls:
-    - https://jatin-jangir.github.io/migrant/postgres-migrant-0.0.2.tgz
+    - https://jatin-jangir.github.io/migrant/helm-package/postgres-migrant-0.0.2.tgz
     version: 0.0.2
   - apiVersion: v2
     appVersion: 1.16.0
@@ -81,7 +81,7 @@ entries:
     name: postgres-migrant
     type: application
     urls:
-    - https://jatin-jangir.github.io/migrant/postgres-migrant-0.0.1.tgz
+    - https://jatin-jangir.github.io/migrant/helm-package/postgres-migrant-0.0.1.tgz
     version: 0.0.1
   sql-server-migrant:
   - apiVersion: v2
@@ -92,6 +92,6 @@ entries:
     name: sql-server-migrant
     type: application
     urls:
-    - https://jatin-jangir.github.io/migrant/sql-server-migrant-0.0.2.tgz
+    - https://jatin-jangir.github.io/migrant/helm-package/sql-server-migrant-0.0.2.tgz
     version: 0.0.2
 generated: "2023-09-25T18:49:58.517801+05:30"
